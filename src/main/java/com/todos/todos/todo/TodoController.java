@@ -19,7 +19,12 @@ public class TodoController {
 
     @QueryMapping
     public List<Todo> findAllTodos(){
-        return todoService.findAllTodos();
+        return todoService.getAllTodos();
+    }
+
+    @QueryMapping
+    public Optional<Todo> findTodoById(@Argument String id) {
+        return todoService.getTodoById(id);
     }
 
     @MutationMapping
