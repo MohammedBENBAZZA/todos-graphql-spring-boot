@@ -5,6 +5,7 @@ type Query {
 type Mutation {
     createTodo(todo: TodoRequest): Todo
     updateTodo(id: String, todo: TodoRequest): Todo
+    deleteTodo(id: String): Boolean
 }
 
 type Todo {

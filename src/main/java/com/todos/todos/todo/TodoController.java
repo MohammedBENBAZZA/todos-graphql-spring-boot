@@ -31,4 +31,9 @@ public class TodoController {
     public Optional<Todo> updateTodo(@Argument String id, @Argument Todo todo) {
         return todoService.updateTodo(id, todo);
     }
+
+    @MutationMapping
+    public Boolean deleteTodo(@Argument String id) {
+        return todoService.deleteTodo(id);
+    }
 }

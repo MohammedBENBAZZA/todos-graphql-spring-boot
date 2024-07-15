@@ -28,4 +28,13 @@ public class TodoService {
         });
     }
 
+    public boolean deleteTodo(String id) {
+        if (todoRepository.existsById(id)) {
+            todoRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
