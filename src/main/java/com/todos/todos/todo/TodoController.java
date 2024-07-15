@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @AllArgsConstructor
@@ -16,13 +17,18 @@ public class TodoController {
 
     private final TodoService todoService;
 
+    @QueryMapping
+    public List<Todo> findAllTodos(){
+        return todoService.findAllTodos();
+    }
+
     @MutationMapping
     public Todo createTodo(@Argument Todo todo) {
         return todoService.createTodo(todo);
     }
 
-    @QueryMapping
-    public List<Todo> findAllTodos(){
-        return todoService.findAllTodos();
+    @MutationMapping
+    public Optional<Todo> updateTodo(@Argument String id, @Argument Todo todo) {
+        return todoService.updateTodo(id, todo);
     }
 }
