@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+      username: moben
+      password: moben
+      host: mongodb
+      port: 27017
+      database: todo_app
+      authentication-database: admin
+  graphql:
+    graphiql:
+      enabled: true
+server:
+  port: 8080
